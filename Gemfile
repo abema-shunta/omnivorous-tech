@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "autoprefixer-rails"
+gem "github-pages"
 gem "html-proofer"
 gem "jekyll"
 gem "jekyll-assets"
