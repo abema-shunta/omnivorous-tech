@@ -24,7 +24,7 @@ github_username:  shuntd-uk
 
 # Build settings
 markdown: kramdown
-theme: jekyll-swiss
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
 
