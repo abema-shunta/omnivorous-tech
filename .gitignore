@@ -1,2 +1,4 @@
-.sass-cache
-.jekyll-metadata
+# Dependency directories
+./omnivorous-tech/node_modules/
+
+./node_modules/
