@@ -1,0 +1,22 @@
+{
+  "name": "omnivorous-tech",
+  "version": "1.0.0",
+  "description": "Omnivorous-Tech BLOG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuntd-uk/omnivorous-tech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuntd-uk/omnivorous-tech/issues"
+  },
+  "homepage": "https://github.com/shuntd-uk/omnivorous-tech#readme",
+  "devDependencies": {
+    "webpack": "^4.5.0"
+  }
+}
