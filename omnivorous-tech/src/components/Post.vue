@@ -1,17 +1,9 @@
 <template lang="pug">
-  .hello
-    img(src="../assets/logo.jpg" width="300px" height="300px")
-    h1 {{ msg }}
-    h2 Essential Links
-    ul
-      li
-        a(href="https://twitter.com" target="_blank") Twitter
-      li
-        a(href="https://facebook.com" target="_blank") Facebook
-    h2 Recent Articles
-    ul
-      li(v-for="item in items")
-        a(:href="postPath(item)") {{item.title}}
+  .post 
+    .hello
+      h1 {{ title }}
+      .body(v-html="body")
+    a(href="/") トップへ戻る
 </template>
 
 <script>
@@ -23,29 +15,24 @@ Vue.use(VueAxios, axios)
 
 const BLOG_ID = '819751833423889054';
 const API_KEY = 'AIzaSyDSEiq6j_xAyNAAcz_1cyRzfIecHotCB6o';
-var api = "https://www.googleapis.com/blogger/v3/blogs/"+BLOG_ID+"/posts";
 
 export default {
   name: 'HelloWorld',
+  props: ['id'],
   data(){
     return {
-      msg: 'Omnivorous Tech',
-      body: 'Comming Soon...',
-      items: []
-    }
-  },
-  methods: {
-    postPath(item){
-      return "/#/post/" + item.id
+      title: 'Blog title',
+      body: 'Body'
     }
   },
   mounted(){
+    var api = "https://www.googleapis.com/blogger/v3/blogs/"+BLOG_ID+"/posts/"+this.id;
     Vue.axios.get(api,{params:{key: API_KEY}}).then((response) => {
-      this.items = response.data.items
+      this.title = response.data.title;
+      this.body = response.data.content;
     })
-  }
+  },
 }
-
 
 </script>
 
